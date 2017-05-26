@@ -1,0 +1,50 @@
+Instalacja
+1.
+mkdir djangogirls
+cd djangogirls
+
+2.
+C:\U¿ytkownicy\Nazwa\djangogirls> C:\Python34\python -m venv myvenv
+
+3. witrualne srodowisko
+C:\U¿ytkownicy\Nazwa\djangogirls> myvenv\Scripts\activate
+
+4. instalka
+(myvenv) ~$ pip install django==1.8
+
+5. tworzenie nowego  projektu
+(myvenv) ~/djangogirls$ django-admin startproject mysite .
+
+6. modyfikowanie ustawien
+plik mysite/settings.py:TIME_ZONE = 'Europe/Warsaw' ; STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'public', 'static')
+
+7. tworzenie bazy danych
+(myvenv) ~/djangogirls$ python manage.py migrate
+
+8. uruchomienie serwera:
+(myvenv) ~/djangogirls$ python manage.py runserver
+
+http://127.0.0.1:8000 - juz powinien dzia³ac
+
+9. Zakladanie nowego projektu:
+python manage.py startapp blog
+aktualizac pliku mysite/settings.py - dodajemy nazwe aplikacji
+
+10. tworzymy model wpisu na blogu poprzez edycje pliku /blog/models.py
+
+11. tworzymy schemat i tabele dla modeli w bazie danych:
+(myvenv) ~/djangogirls$ python manage.py makemigrations blog
+python manage.py migrate blog
+
+ADMINISTRACJA DJANGO:
+
+12.
+Edycja pliku blog/admin.py:
+from django.contrib import admin
+from .models import Post
+
+admin.site.register(Post)
+
+
+

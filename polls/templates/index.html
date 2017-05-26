@@ -1,0 +1,8 @@
+<h1>Moja Strona </h1>
+{% for entry in polls %}
+    <h3>{{ entry.question_text }}</h3>
+    {{ entry.choice_text|safe }}<br />
+    {{ entry.posted_date|date:"Y.m.d H:i" }}
+{% endfor  %}
+<br>
+Listowanie wiadomosci w akcji
