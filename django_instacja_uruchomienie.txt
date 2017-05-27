@@ -46,5 +46,18 @@ from .models import Post
 
 admin.site.register(Post)
 
+jolauc.pythonanywhere.com.
+
+Aktualizacja danych   na GITHUB
+git add --all
+git commit -m "Zmieniony kod HTML na stronie."
+git push
+                 Aktualizacja danych n apythonAnyWere
+cd ~/Moj_blog
+$ source myvenv/bin/activate
+(myvenv)$ git pull
+[...]
+(myvenv)$ python manage.py collectstatic
+[...]
 
 
