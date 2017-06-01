@@ -47,6 +47,21 @@ from .models import Post
 admin.site.register(Post)
 
 jolauc.pythonanywhere.com.
+***********tworzenie srodowiska pythonanyware
+cd my-first-blog
+
+$ virtualenv --python=python3.4 myvenv
+
+$ source myvenv/bin/activate
+
+(mvenv) $  pip install django whitenoise
+
+************koniec***
+
+
+
+
+
 
 Aktualizacja danych   na GITHUB
 git add --all
@@ -54,10 +69,21 @@ git commit -m "Zmieniony kod HTML na stronie."
 git push
                  Aktualizacja danych n apythonAnyWere
 cd ~/Moj_blog
-$ source myvenv/bin/activate
+$ from django.shortcuts import render
+from django.utils import timezone
+from .models import Post
+
+def post_list(request):
+    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    return render(request, 'blog/post_list.html', {})
 (myvenv)$ git pull
 [...]
 (myvenv)$ python manage.py collectstatic
 [...]
+Uruchomienie interaktywnej konsoli Django:
+python manage.py shell
 
+
+Konto GitHub: jolauc@poczta.onet.pl 
+Konto PythonEnywere: jolauc Mazowiecka1
 
